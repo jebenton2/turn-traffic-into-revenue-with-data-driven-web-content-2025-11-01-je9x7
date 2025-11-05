@@ -21,10 +21,14 @@
             background-clip: text;
         }
         .card-hover {
-            @apply transition-all duration-300 hover:shadow-xl hover:scale-105;
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: scale(1.05);
         }
         .faq-icon {
-            @apply transition-transform duration-300;
+            transition: transform 0.3s ease;
         }
     </style>
 </head>
@@ -326,7 +330,8 @@
     </footer>
 
     <!-- JavaScript -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Smooth Scroll for Anchor Links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -334,4 +339,17 @@
                     const href = this.getAttribute('href');
                     if (href !== '#' && href.length > 1) {
                         e.preventDefault();
-                        const target = document.querySelector(
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
