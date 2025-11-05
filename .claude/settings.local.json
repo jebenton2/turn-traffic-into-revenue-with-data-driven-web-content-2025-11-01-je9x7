@@ -6,7 +6,8 @@
       "Bash(curl:*)",
       "Bash(open \"http://localhost:8000/index.html\")",
       "Bash(lsof:*)",
-      "Bash(xargs kill -9)"
+      "Bash(xargs kill -9)",
+      "Bash(open index.html)"
     ],
     "deny": [],
     "ask": []
